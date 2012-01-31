@@ -1,0 +1,17 @@
+<h1>Employees List</h1>
+<h1><%= @employee.name %></h1>
+<p><strong>Name: </strong> <%= @employee.name %><br />
+<p><strong>EmployeeId: </strong> <%= @employee.empid %><br />
+<p><strong>Addres: </strong> <%= @employee.addr %><br />
+<strong>Technology :</strong> <%= @employee.subject.name %><br />
+<p><strong>Date-Of-Birth: </strong> <%= @employee.dateofbirth %><br />
+<p><strong>Qualification: </strong> <%= @employee.qualification%><br />
+<p><strong>Sex: </strong> <%= @employee.sex %><br />
+
+
+
+<strong>Created Date:</strong> <%= @employee.created_at %><br />
+</p>
+
+
+<%= link_to 'Back', {:action => 'list'} %>

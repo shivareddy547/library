@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Library</title>
+  <%= stylesheet_link_tag :all %>
+  <%= javascript_include_tag :defaults %>
+  <%= csrf_meta_tag %>
+
+
+</head>
+
+
+
+
+<body>
+
+<div id="framecontentLeft">
+<div class="innertube">
+
+<h3>Sample text here</h3>
+
+</div>
+</div>
+<div id="framecontentRight">
+<div class="innertube">
+
+<h3>Sample text here</h3>
+
+</div>
+</div>
+
+
+<div id="framecontentTop">
+<div class="innertube">
+<ul class="semiopaquemenu">
+<li><a href="/home/index">Home</a></li>
+<li><a href="/books">Library</a></li>
+<li><a href="/employee/list" id="selected">Employees</a></li>
+<li><a href="http://www.dynamicdrive.com/forums/">News</a></li>
+<li><a href="http://www.railsfactory.com/contact/">Contact Us</a></li>
+<li><a href="http://blog.railsfactory.com/">Blog</a></li>
+</ul>
+<div class="bottombar"></div>
+
+
+<h1>Welcome to Rails factory</h1>
+<h3>rails factory is one of the rails development company</h3>
+<ul class="semiopaquemenu">
+<ul>
+<li><a href="/home/index">Home</a></li>
+<li><a href="/books">Library</a></li>
+<li><a href="/employee/list" id="selected">Employees</a></li>
+<li><a href="http://www.dynamicdrive.com/forums/">News</a></li>
+<li><a href="http://www.railsfactory.com/contact/">Contact Us</a></li>
+<li><a href="http://blog.railsfactory.com/">Blog</a></li>
+
+<li><a href="#" id="rightcorner">&nbsp;</a></li>
+</ul>
+</div>
+<br style="clear: left" />
+
+</div>
+</div>
+
+
+<div id="maincontent">
+<div class="innertube">
+<%= yield %>
+
+
+
+</div>
+</div>
+<div id="footer">
+<div class="innertube">
+
+
+<p style="text-align: center">Credits: <a href="http://www.Railsfactory.com/">Railsfactory</a></p>
+
+</div>
+</div>
+
+</body>
+
+
+
+</html>

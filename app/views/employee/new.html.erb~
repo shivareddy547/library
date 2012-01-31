@@ -1,0 +1,24 @@
+<h1>Add new book</h1>
+<%= form_for  :employee,:url =>{:action=>'create'} do |f|%>
+
+Name:<p><%= f.text_field :name%></p>
+Employee id:<p><%= f.text_field :empid%></p>
+Addres:<p><%= f.text_area :addr%></p>
+<p>
+Technology:<%= collection_select(:employee,:subject_id,@subjects,:id,:name) %></p>
+Date-Of-Birth:<p><%= f.text_field :dateofbirth%></p>
+
+Qualification:<p><%= f.text_field :qualification %></p>
+<p>
+
+
+Sex:<p><%= f.text_field :sex %></p>
+
+
+
+
+ 
+
+
+<p><%= f.submit%></p>
+<%end%>

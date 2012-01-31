@@ -1,0 +1,32 @@
+<div id="product_list">
+<h1>Listing Books</h1>
+<table>
+<% @books.each do |book| %>
+<tr class="<%= cycle('list_line_odd', 'list_line_even') %>">
+<td>
+<%= image_tag(book.image_url, :class => 'list_image') %>
+</td>
+<td class="list_description">
+<dl>
+<dt><%= book.name %></dt>
+<dt><%= book.isbnno %></dt>
+<dd><%= truncate(strip_tags(book.description),
+:length => 80) %></dd>
+</dl>
+</td>
+<td class="list_actions">
+<%= link_to 'Show', book %><br/>
+<%= link_to 'Edit', edit_book_path(book) %><br/>
+<%= link_to 'Destroy', book,
+:confirm => 'Are you sure?',
+:method => :delete %>
+</td>
+</tr>
+<% end %>
+
+</table>
+</div>
+<br />
+
+<%= link_to 'New product', new_book_path %>
+
