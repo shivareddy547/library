@@ -1,170 +1,119 @@
+/* CSS Document */
+* {margin:0;padding:0}
+p {margin-bottom:1em}
+ul{margin-left:20px;margin-bottom:1em}
+/* commented backslash hack v2 \*/ 
+html, body{height:100%;} 
+/* end hack */ 
 
-body{
-margin: 0;
-padding: 0;
-border: 0;
-overflow: hidden;
-height: 100%; 
-max-height: 100%; 
+body {
+	background:#D2DA9C url(leftcolbg.jpg) repeat-y left top;
+	color: #FFF;
 }
-
-#framecontentLeft, #framecontentTop{
-position: absolute; 
-top: 0; 
-left: 0; 
-width: 200px; /*Width of left frame div*/
-height: 100%;
-overflow: hidden; /*Disable scrollbars. Set to "scroll" to enable*/
-background-color: navy;
-color: white;
+#outer{
+	margin-left:130px;
+	margin-right:130px;
+	background: #FFF;
+	border-left:1px solid #000;
+	border-right:1px solid #000;
+	margin-bottom:-52px;
+	min-height:100%
 }
-
-#framecontentTop{ 
-left: 200px; /*Set left value to WidthOfLeftFrameDiv*/
-right: 0;
-width: auto;
-height: 120px; /*Height of top frame div*/
-overflow: hidden; /*Disable scrollbars. Set to "scroll" to enable*/
-background-color: green;
-color: white;
+#header{
+	position:absolute;
+	top:0;
+	left:0;
+	width:100%;
+	height:70px;
+	background: #809900;
+	border-top:1px solid #000;
+	border-bottom:1px solid #000;
+	overflow:hidden;
+	z-index:999;
 }
-
-#maincontent{
-position: fixed; 
-left: 200px; /*Set left value to WidthOfLeftFrameDiv*/
-top: 120px; /*Set top value to HeightOfTopFrameDiv*/
-right: 0;
-bottom: 0;
-overflow: auto; 
-background: #fff;
+#left {
+	position:relative;/*ie needs this to show float */
+	width:130px;
+	float:left;
+	margin-left:-129px;/*must be 1px less than width otherwise won't push footer down */
+	z-index:100;
+	left:-1px;
 }
-
-.innertube{
-margin: 15px; /*Margins for inner DIV inside each DIV (to provide padding)*/
+#left p, 
+#right p {padding:3px}
+#right {
+	position:relative;/*ie needs this to show float */
+	width:130px;
+	float:right;
+	margin-right:-129px;/*must be 1px less than width otherwise won't push footer down */
+	left:1px;
+	color: #000;
 }
-
-* html body{ /*IE6 hack*/
-padding: 120px 0 0 200px; /*Set value to (HeightOfTopFrameDiv 0 0 WidthOfLeftFrameDiv)*/
+#footer {
+	width:100%;
+	clear:both;
+	height:50px;
+	border-top:1px solid #000;
+	border-bottom:1px solid #000;
+	background-color: #406700;
+	text-align:center;
+	position:relative;
 }
-
-* html #maincontent{ /*IE6 hack*/
-height: 100%; 
-width: 100%; 
+#clearheader{height:72px;}/*needed to make room for header*/
+#clearfooter{clear:both;height:52px;}/*needed to make room for footer*/
+* > html #clearfooter {float:left;width:100%;}/* ie mac styles */
+#centrecontent {
+	width:100%;
+	float:left;
+	position:relative;
+	z-index:1;
+	margin:0 -1px;/* old moz fix*/
+	color: #000;
 }
-
-* html #framecontentTop{ /*IE6 hack*/
-width: 100%;
+/* css stuff below is just for presentation and not needed for the demo */
+#centrecontent p { padding: 0 20px; }
+h1 {font-family: Verdana, Arial, Helvetica, sans-serif; font-weight: lighter; font-size: 150%; padding: 20px;}
+#left span {
+	display:none;	
+}	
+#left a:hover {
+	text-decoration: none;
+	text-decoration: none;
+	color:#222;
+	background: #FFF;
 }
-
-#pointermenu{
-border-top: 7px solid black; /*optional border across top*/
-margin: 0;
-body{
-margin: 0;
-padding: 0;
-border: 0;
-overflow: hidden;
-height: 100%; 
-max-height: 100%; 
+#left a:hover span {
+	display:block;
+	position:absolute;
+	left:130px;
+	width:150px;
+	z-index:20;
+	background:#fff;
 }
-
-#framecontentLeft, #framecontentTop{
-position: absolute; 
-top: 0; 
-left: 0; 
-width: 200px; /*Width of left frame div*/
-height: 100%;
-overflow: hidden; /*Disable scrollbars. Set to "scroll" to enable*/
-background-color: navy;
-color: white;
+@media all and (min-width: 0px){
+  #left a:hover span {
+	top:150px;
+  }
 }
-
-#framecontentTop{ 
-left: 200px; /*Set left value to WidthOfLeftFrameDiv*/
-right: 0;
-width: auto;
-height: 120px; /*Height of top frame div*/
-overflow: hidden; /*Disable scrollbars. Set to "scroll" to enable*/
-background-color: navy;
-color: white;
+#footer a, #left a { color:#FFF; }
+#footer span {
+	display:none;	
+}	
+#footer a:hover {
+	text-decoration: none;
+	color:#222;
+	background: #FFF;
 }
-
-#maincontent{
-position: fixed; 
-left: 200px; /*Set left value to WidthOfLeftFrameDiv*/
-top: 120px; /*Set top value to HeightOfTopFrameDiv*/
-right: 0;
-bottom: 0;
-overflow: auto; 
-background: #fff;
+#footer a:hover span {
+	display:block;
+	position:absolute;
+	top:-95px;
+	width:150px;
+	z-index:20;
+	background:#fff;
+	left:50%;
 }
-
-.innertube{
-margin: 15px; /*Margins for inner DIV inside each DIV (to provide padding)*/
-}
-
-* html body{ /*IE6 hack*/
-padding: 120px 0 0 200px; /*Set value to (HeightOfTopFrameDiv 0 0 WidthOfLeftFrameDiv)*/
-}
-
-* html #maincontent{ /*IE6 hack*/
-height: 100%; 
-width: 100%; 
-}
-
-* html #framecontentTop{ /*IE6 hack*/
-width: 100%;
-}
-padding: 0;
-}
-
-#pointermenu ul{
-margin: 0;
-margin-left: 15px; /*menu offset from left edge of window*/
-float: left;
-padding-left: 8px;
-font: bold 13px Verdana;
-background-color: black;
-background: black url(media/leftround.gif) bottom left no-repeat; /*optional left round corner*/
-}
-
-* html #pointermenu ul{ /*IE6 only rule. Decrease ul left margin and add 1em bottom margin*/
-margin-bottom: 1em;
-margin-left: 7px; /*menu offset from left edge of window in IE*/
-}
-
-#pointermenu ul li{
-display: inline;
-}
-
-
-#pointermenu ul li a{
-float: left;
-color: white;
-font-weight: bold;
-padding: 2px 11px 7px 7px;
-text-decoration: none;
-background: url(media/pointer.gif) bottom center no-repeat;
-}
-
-#pointermenu ul li a:visited{
-color: white;
-}
-
-
-#pointermenu ul li a:hover, #pointermenu ul li a#selected{ /*hover and selected link*/
-color: white;
-background-color: darkred;
-}
-
-#pointermenu ul li a#rightcorner{
-padding-right: 0;
-padding-left: 2px;
-background: url(media/rightround.gif) bottom right no-repeat; /*optional right round corner*/
-}
-
-
-
+html>body #minHeight{float:right;width:0px;height:100%;margin-bottom:-52px;} /*safari wrapper */
 
 
 
@@ -253,10 +202,9 @@ border-style:solid;
 border-color: transparent transparent purple transparent; /* create up arrow */
 }
 
-/*****************************Form style************************
 
 
-div.feedbackform{
+.feedbackform{
 padding: 5px;
 }
 
@@ -296,5 +244,8 @@ div.buttonsdiv input{ /* style for INPUT fields within 'buttonsdiv'. Assumed to 
 width: 80px;
 background: #e1dfe0;
 }
+
+
+
 
 

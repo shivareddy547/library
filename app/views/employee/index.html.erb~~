@@ -27,5 +27,5 @@
 </table>
 </div>
 <br />
-<%= link_to 'New Employee', new_book_path %>
+<%= link_to 'New product', new_book_path %>
 

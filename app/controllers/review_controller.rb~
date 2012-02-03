@@ -32,7 +32,7 @@ end
       end
    end
    def delete
-      Employee.find(params[:id]).destroy
+      Review.find(params[:id]).destroy
       redirect_to :action => 'list'
    end
    

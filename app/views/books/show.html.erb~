@@ -9,7 +9,7 @@
   <b>Isbn NO:</b>
   <%= @book.isbnno %>
 </p>
-<strong>Subject :</strong> <%= @book.subject.name %><br />
+
 <p>
     <b>Subject:</b>
      <%=@book.subject.name %>

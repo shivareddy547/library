@@ -1,5 +1,5 @@
 <div id="product_list">
-<h1>Listing Books</h1>
+<h1>These books are available in our system </h1> 
 <table>
 <% @books.each do |book| %>
 <tr class="<%= cycle('list_line_odd', 'list_line_even') %>">
@@ -28,5 +28,5 @@
 </div>
 <br />
 <%= will_paginate @books %>
-<%= link_to 'New product', new_book_path %>
+<%= link_to 'New Book', new_book_path %>
 

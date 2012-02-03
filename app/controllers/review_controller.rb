@@ -9,6 +9,7 @@ def list
     
    end
    def create
+@book=Book.find(params[:book_id])
 @review = Review.new(params[:review])
 if @review.save!
 redirect_to :action => "list"

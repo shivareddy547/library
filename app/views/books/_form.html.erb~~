@@ -1,72 +1,46 @@
-<div class="feedbackform">
+
 
 <%= form_for(@book) do |f| %>
-  <% if @book.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@book.errors.count, "error") %> prohibited this book from being saved:</h2>
-
-      <ul>
-      <% @book.errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
-
-<div class="fieldwrapper">
-	<label for="username" class="styled">Your Name:</label>
-	<div class="thefield">
-		<input type="text" id="username" value="" size="30" />
-	</div>
-</div>
-
-
+ 
   <div class="field">
     <%= f.label :Name %><br />
-<div class="thefield">
     <%= f.text_field :name %>
-</div>
   </div>
   <div class="field">
     <%= f.label :Isbnno %><br />
-<div class="thefield">
     <%= f.text_field :isbnno %>
-</div>
   </div>
 <div class="field">
-
 <%= f.label :Subject %><br />
-<div class="thefield">
 <%= collection_select(:book,:subject_id,@subjects,:id,:name) %>
-</div>
 </div>
   <div class="field">
     <%= f.label :Author %><br />
-<div class="thefield">
+
     <%= f.text_field :author %>
-</div>
+
   </div>
   <div class="field">
     <%= f.label :Image_url %><br />
-<div class="thefield">
+
     <%= f.file_field :image_url %>
-</div>
+
   </div>
   <div class="field">
     <%= f.label :Description %><br />
-<div class="thefield">
+
     <%= f.text_area :description,:rows => 6 %>
-</div>
+
   </div>
 <div class="field">
     <%= f.label :price %><br />
-<div class="thefield">
+
     <%= f.text_field :price %>
-</div>
+
   </div>
   <div class="actions">
     <%= f.submit %>
   </div>
-<div>
+
 <% end %>
 
