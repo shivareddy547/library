@@ -23,5 +23,31 @@ Library::Application.configure do
   # Only use best-standards-support built into browsers
   config.action_dispatch.best_standards_support = :builtin
 config.action_mailer.default_url_options = { :host => 'localhost:3000' }
+config.action_mailer.delivery_method = :smtp
+
+  config.action_mailer.smtp_settings = {
+  :enable_starttls_auto  => true,  
+  :address                      => 'smtp.gmail.com',
+  :port                             => 587,
+  :tls                                => true,
+  :domain                        => 'gowdanar.com', #you can also use google.com
+  :authentication             => :plain,
+  :user_name                  => 'shiva.r547@gmail.com',
+  :password                     => '9652363670'
+}
+
+
+config.after_initialize do
+  ActiveMerchant::Billing::Base.mode = :test
+  paypal_options = {
+    :login => "shivab_1328692976_biz@gmail.com",
+    :password => "9652363670",
+    :signature => "AGjv6SW.mTiKxtkm6L9DcSUCUgePAUDQ3L-kTdszkPG8mRfjaRZDYtSu"
+  }
+  ::STANDARD_GATEWAY = ActiveMerchant::Billing::PaypalGateway.new(paypal_options)
+  ::EXPRESS_GATEWAY = ActiveMerchant::Billing::PaypalExpressGateway.new(paypal_options)
+end
+
+
 end
 

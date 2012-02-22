@@ -1,5 +1,20 @@
 Library::Application.routes.draw do
-  devise_for :users
+
+
+  get "contactus/index"
+
+  get "contactus/thanks"
+
+  get 'admin' => 'admin#index'
+controller :sessions do
+get 'login' => :new
+post 'login' => :create
+delete 'logout' => :destroy
+end
+
+  resources :users
+
+  get "search/new"
 
   get "home/index"
 

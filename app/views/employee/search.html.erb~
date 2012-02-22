@@ -1,0 +1,9 @@
+<% if @employees.empty? %>
+        <span>There were no results for your query</span><br/><br/>
+<% else %>
+
+<% for product in @employees %>
+Result: <% employee.name %>
+<% end %>
+
+<% end %>

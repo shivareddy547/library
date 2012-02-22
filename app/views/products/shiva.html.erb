@@ -1,0 +1,23 @@
+<h1>Hi Shiva</h1>
+<h1>Add new Product</h1>
+<%= form_for  :product,:url =>{:action=>'create'} do |f|%>
+
+
+ Name:<p><%= f.text_field :name%></p>
+
+
+Description:<p><%= f.text_field :description %></p>
+
+
+Price:<p><%= f.text_field :price %></p>
+
+
+
+
+credits:<p><%= f.text_field :credits%></p>
+
+ 
+
+
+<p><%= f.submit%></p>
+<%end%>

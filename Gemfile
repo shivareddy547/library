@@ -7,7 +7,8 @@ gem 'rails', '3.0.3'
 
 gem 'mysql'
 gem 'will_paginate'
-gem 'devise','1.4.9'
+gem 'devise'
+
 # Use unicorn as the web server
 # gem 'unicorn'
 

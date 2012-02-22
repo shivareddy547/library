@@ -1,6 +1,15 @@
 class Book < ActiveRecord::Base
 has_many :reviews
 belongs_to :subject
-validates_presence_of :title
-  validates_numericality_of :isbnno
+
+
+def self.search(search)
+  if search
+    find(:all, :conditions => ['title LIKE ?', "%#{search}%"])
+  else
+    find(:all)
+  end
+end
+
+
 end

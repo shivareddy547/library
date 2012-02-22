@@ -1,0 +1,53 @@
+<h2>List of Products</h2>
+
+<table cellpadding="5" cellspacing="0" border="0" width="50%" align="left">
+
+<tr>
+<th style="width:10%">Name</th>
+<th style="width:10%">Description</th>
+<th style="width:10%">Price</th>
+<th style="width:10%">No.of Credits</th>
+<th style="width:10%">Actions</th>
+</tr>
+
+
+
+<% @products.each do |product| %>
+<tr style="text-align:center;">
+<td><%=h product.name %> </td>
+<td><%=h product.description %> </td>
+<td>$ <%=h product.price %> </td>
+<td><%=h product.credits %> </td> 
+
+<% end %>
+
+## the below code is button code to display “Buy Now” button.
+
+<td>
+
+<form target="paypal" action="https://www.sandbox.paypal.com/cgi-bin/webscr" method="post">
+<input type="hidden" name="cmd" value="_cart">
+<input type="hidden" name="business" value="shiva.r547@gmail.com">
+<input type="hidden" name="lc" value="US">
+<input type="hidden" name="item_name" value="shiva">
+<input type="hidden" name="amount" value="6546.00">
+<input type="hidden" name="currency_code" value="USD">
+<input type="hidden" name="button_subtype" value="products">
+<input type="hidden" name="no_note" value="0">
+<input type="hidden" name="tax_rate" value="50.000">
+<input type="hidden" name="shipping" value="100.00">
+<input type="hidden" name="add" value="1">
+<input type="hidden" name="bn" value="PP-ShopCartBF:btn_cart_LG.gif:NonHostedGuest">
+<input type="image" src="https://www.sandbox.paypal.com/en_US/i/btn/btn_cart_LG.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
+
+</form>
+
+
+
+
+
+</td>
+</tr>
+</table>
+
+<p><%= link_to "Add new Product", {:action => 'new' }%></p>

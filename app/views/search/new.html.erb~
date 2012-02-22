@@ -1,0 +1,11 @@
+<%= form_for  :search,:url =>{:action=>'new'} do |f|%>
+  <p>
+    <%= f.label :keywords %><br />
+    <%= f.text_field :keywords %>
+  </p>
+  
+  
+  <p><%= f.submit "Submit" %></p>
+<% end %>
+
+

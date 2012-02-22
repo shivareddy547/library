@@ -1,0 +1,35 @@
+<h2>List of Products</h2>
+
+<table cellpadding="5" cellspacing="0" border="0" width="50%" align="left">
+
+<tr>
+<th style="width:10%">Name</th>
+<th style="width:10%">Description</th>
+<th style="width:10%">Price</th>
+<th style="width:10%">No.of Credits</th>
+<th style="width:10%">Actions</th>
+</tr>
+
+<% @products.each do |product| %>
+<tr style="text-align:center;">
+<td><%=h product.name %> </td>
+<td><%=h product.description %> </td>
+<td>$ <%=h product.price %> </td>
+<td><%=h product.credits %> </td>
+
+## the below code is button code to display “Buy Now” button.
+
+<td>
+
+<form action="https://www.sandbox.paypal.com/cgi-bin/webscr" method="post">
+<input type="hidden" name="cmd" value="_s-xclick">
+<input type="hidden" name="hosted_button_id" value="6XFNKDXQNU822">
+<input type="image" src="https://www.sandbox.paypal.com/en_US/i/btn/btn_buynowCC_LG.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
+<img alt="" border="0" src="https://www.sandbox.paypal.com/en_US/i/scr/pixel.gif" width="1" height="1">
+</form>
+
+
+</td>
+</tr>
+</table>
+

@@ -1,0 +1,36 @@
+<h1>Add new Product</h1>
+<%= form_for  :product,:url =>{:action=>'create'} do |f|%>
+
+
+ Name:<p><%= f.text_field :name%></p>
+
+
+Description:<p><%= f.text_field :description %></p>
+
+
+Price:<p><%= f.text_field :price %></p>
+
+
+
+
+credits:<p><%= f.text_field :credits%></p>
+
+ 
+
+
+<p><%= f.submit%></p>
+<%end%>
+
+<% form_for @product do |f| %>
+  <%= f.error_messages %>
+  <% if @product.express_token.blank? %>
+    ...
+  <% else %>
+    <%= f.hidden_field :express_token %>
+    <p>Name: <%=h @product.name %> <%=h @product.price %></p>
+    <p>TODO Display order confirmation details</p>
+  <% end %>
+  <p><%= f.submit "Complete Order" %></p>
+<% end %>
+
+

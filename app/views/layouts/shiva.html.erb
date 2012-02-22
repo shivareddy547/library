@@ -1,0 +1,132 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<!--
+Design by Free CSS Templates
+http://www.freecsstemplates.org
+Released for free under a Creative Commons Attribution 3.0 License
+
+Name       : Individual
+Description: A two-column, fixed-width design with a bright color scheme.
+Version    : 1.0
+Released   : 20120201
+-->
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta name="description" content="" />
+<meta name="keywords" content="" />
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<title>Library</title>
+ 
+  <%= stylesheet_link_tag :all %>
+  <%= javascript_include_tag :defaults %>
+  <%= csrf_meta_tag %>
+ <%= stylesheet_link_tag "style",:media=>:all %>
+<%= javascript_include_tag "shiva",:media=>:all %>
+<%= javascript_include_tag "shiva1",:media=>:all %>
+<link href="http://fonts.googleapis.com/css?family=Bitter" rel="stylesheet" type="text/css" />
+<link rel="stylesheet" type="text/css" href="style.css" />
+<script type="text/javascript" src="jquery-1.4.2.min.js"></script>
+<script type="text/javascript" src="jquery.formerize-0.1.js"></script>
+<script type="text/javascript">
+	$(function() {
+		$('#search').formerize();
+	});
+</script>
+</head>
+<body>
+<div id="wrapper">
+	<div id="header">
+		<div id="logo">
+			<h1><a href="#">WELCOME TO STUDENT ADMIN</a></h1>
+
+
+		</div>
+	
+		<div id="menu">
+			<ul>
+				<li class="first current_page_item"><a href="/home">Homepage</a></li>
+				<li><a href="/books/index">Library</a></li>
+				<li><a href="/employee/list">Employee</a></li>
+				<li><a href="#">Photos</a></li>
+				<li><a href="#">Links</a></li>
+				<li><a href="#">Friends</a></li>
+				<li><a href="#">Portfolio</a></li>
+				<li class="last"><a href="http://railsfactory.com">Contact</a></li>
+			</ul>
+			<br class="clearfix" />
+		</div>
+	</div>
+	<div id="page">
+
+
+<ul class="semiopaquemenu">
+<li><a href="http://www.dynamicdrive.com/">Home</a></li>
+<li><a href="http://www.dynamicdrive.com/style/" class="selected">CSS Codes</a></li>
+<li><a href="http://www.dynamicdrive.com/forums/">Forums</a></li>
+<li><a href="http://tools.dynamicdrive.com">Webmaster Tools</a></li>
+<li><a href="http://www.javascriptkit.com/">JavaScript</a></li>
+<li><a href="http://www.cssdrive.com">Gallery</a></li>
+</ul>
+<div class="bottombar"></div>
+
+
+		<div id="sidebar">
+			<h3>Welcome Home</h3>
+			
+
+<ul class="svertical">
+<li><a href="/home">Home</a></li>
+<li><a href="/books/index" >Library </a></li>
+<li><a href="/employee/list">Employees </a></li>
+<li><a href="/subject/list">Subjects</a></li>
+<li><a href="/users/new ">Join Now</a></li>
+<li><a href=" ">Contact Us</a></li>		
+</ul>
+
+
+
+
+
+
+			<h3>welcome to Social Networks </h3>
+			<ul class="list">
+				<li class="first"><a href="#">Auctor nisi tempus</a></li>
+				<li><a href="#">Ante facilisis curabitur odio</a></li>
+				<li><a href="#">Etiam auctor urna amet</a></li>
+				<li><a href="#">Fermentum quisque quam</a></li>
+				<li><a href="#">Parturient lacus vestibulum</a></li>
+				<li class="last"><a href="#">Aliquam vestibulum ipsum</a></li>
+
+			</ul>
+		</div>
+		<div id="content">
+			<div id="post1">
+				
+				
+
+<div id="sh">
+
+
+
+
+
+
+<%= yield %>
+
+<% if session[:user_id] %>
+
+
+<%= button_to 'Logout', logout_path, :method => :delete %>
+<% end %>
+</div>
+
+			</div>
+			<br class="clearfix" />
+		</div>
+		<br class="clearfix" />
+	</div>
+</div>
+<div id="footer">
+	Copyright (c) 2012 Sitename.com. All rights reserved. Design by <a href="http://www.freecsstemplates.org/">CSS Templates</a>.
+</div>
+</body>
+</html>

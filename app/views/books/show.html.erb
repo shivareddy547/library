@@ -2,7 +2,7 @@
 <h1>These books are available in our system </h1> 
 <p>
   <b>Name:</b>
-  <%= @book.name %>
+  <%= @book.name.capitalize %>
 </p>
 
 <p>
@@ -12,16 +12,16 @@
 
 <p>
     <b>Subject:</b>
-     <%=@book.subject.name %>
+     <%=@book.subject.name.capitalize %>
 </p>
 <p>
   <b>Author:</b>
-  <%= @book.author %>
+  <%= @book.author.capitalize %>
 </p>
 
 <p>
   <b>Description:</b>
-  <%= @book.description %>
+  <%= @book.description.capitalize %>
 </p>
 
 <p>

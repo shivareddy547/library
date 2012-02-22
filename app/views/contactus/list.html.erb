@@ -1,0 +1,12 @@
+<% if @contactuses.blank? %>
+<p>There are not any messages currently in the system.</p>
+<% else %>
+<p>These are the current messages in our system</p>
+<ul id="books">
+<% @contactuses.each do |c| %>
+<li><%= link_to c.name, {:action => 'show', :id => c.id} -%></li>
+<% end %>
+</ul>
+<% end %>
+<p><%= link_to "Go to Home ", {:controller=> 'home',:action => 'index' }%></p>
+

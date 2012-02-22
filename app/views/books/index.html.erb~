@@ -1,32 +1,77 @@
-<div id="product_list">
-<h1>These books are available in our system </h1> 
-<table>
-<% @books.each do |book| %>
-<tr class="<%= cycle('list_line_odd', 'list_line_even') %>">
-<td>
-<%= image_tag(book.image_url, :class => 'list_image') %>
-</td>
-<td class="list_description">
-<dl>
-<dt><%= book.name %></dt>
-<dt><%= book.isbnno %></dt>
-<dd><%= truncate(strip_tags(book.description),
-:length => 80) %></dd>
-</dl>
-</td>
-<td class="list_actions">
-<%= link_to 'Show', book %><br/>
-<%= link_to 'Edit', edit_book_path(book) %><br/>
-<%= link_to 'Destroy', book,
-:confirm => 'Are you sure?',
-:method => :delete %>
-</td>
-</tr>
+
+
+
+
+
+		<div class="shiva1">
+
+<% form_tag books_path, :method => 'get' do %>
+<%= text_field_tag :search, params[:search] %>
+<%= submit_tag "Search", :name => nil %>		
 <% end %>
 
-</table>
+
 </div>
+<table>
+<tr>
+<% if @books.blank? %>
+<p>There are not any Books currently in the system.</p>
+<% else %>
+<p>These are the current Books in our system</p>
+
+</tr>
+
+<% @books.each do |book| %>
+
+<tr>
+
+<div class="bookimg">
+
+<%= image_tag(book.image_url, :class => 'list_image') %>
+</div>
+
+<div class="bookname">
+Name:  <%= book.name.capitalize %></br>
+</div>
+
+
+</tr>
+<tr>
+
+
+
+</tr>
+<tr>
+ISBN NO:<%= book.isbnno %>
+</tr>
+
+<tr>
+<div class="desborder">
+
+Description:</br><p><%= book.description %></p>
+</div>
+</tr>
+
+<tr>
+
+
+<%= link_to 'Show', book %>
+<%= link_to 'Edit', edit_book_path(book) %>
+
+<b> <%= link_to "Delete", {:action => 'delete', :id =>book.id},:confirm => "Are you sure you want to delete this item?" %>
+
+</tr>
+</table>
+
+<% end %>
+
+
+<% end %>
+</div>
+
 <br />
-<%= will_paginate @books %>
-<%= link_to 'New product', new_book_path %>
+<%= will_paginate @books1 %>
+<%= link_to 'New Book', new_book_path %>
+
+
 

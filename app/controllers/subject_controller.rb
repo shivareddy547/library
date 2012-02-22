@@ -1,4 +1,5 @@
 class SubjectController < ApplicationController
+before_filter :authorize
 
  def list
   @subjects = Subject.find(:all)

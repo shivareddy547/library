@@ -1,0 +1,6 @@
+
+<strong>Created Date:</strong> <%= @contactus.created_at %><br />
+</p>
+
+<hr />
+<%= link_to 'Back', {:action => 'shiva'} %>

@@ -1,7 +1,8 @@
 class EmployeeController < ApplicationController
   def list
-      @employees = Employee.find(:all)
-@employees = Employee.paginate(:per_page => 2, :page => params[:page])
+      #@employees = Employee.find(:all)
+@employees = Employee.search(params[:search])
+@employees1 = Employee.paginate(:per_page => 1, :page => params[:page])
    end
    def show
       @employee = Employee.find(params[:id])

@@ -1,4 +1,24 @@
 
+
+			
+		
+		<div id="shiva1">
+<div class="s1">
+			<% form_tag :controller=>'employee',:action=>'list', :method => 'get' do %>
+
+				<div>
+<tr><th>
+<%= text_field_tag :search, params[:search] %>
+</th><th>
+<%= submit_tag "Search", :name => nil %></th></tr>
+				</div>
+			</div>
+		</div>
+<% end %>
+
+
+
+
 <% if @employees.blank? %>
 <p>There are not any Employees currently in the system.</p>
 <% else %>
@@ -16,7 +36,14 @@
 </ul>
 <% end %>
 
-<%= will_paginate @employees %>
+
+
+
+<%= will_paginate @employees1 %>
+
+
+
+
 
 
 <p><%= link_to "Add new Book", {:action => 'new' }%></p>

@@ -1,31 +1,8 @@
-<div id="product_list">
-<h1>List of Employess</h1>
-<table>
-<% @employees.each do |employee| %>
-<tr>
-<td class="list_description">
-<dl>
-<dt><%= employee.name %></dt>
-<dt><%= employee.empid %></dt>
-<dt><%= employee.addr %></dt>
-<dt><%= employee.technology %></dt>
-<dt><%= employee.dateofbirth %></dt>
-<dt><%= employee.qualification %></dt>
-<dt><%= employee.sex %></dt>
-
-
-</td>
-<td class="list_actions">
-<%= link_to 'Show', book %><br/>
-<%= link_to 'Edit', edit_book_path(book) %><br/>
-<%= link_to 'Destroy', book,
-:confirm => 'Are you sure?',
-:method => :delete %>
-</td>
-</tr>
+<% form_tag employees_path, :method => 'get' do %>
+  <p>
+    <%= text_field_tag :search, params[:search] %>
+    <%= submit_tag "Search", :name => nil %>
+  </p>
 <% end %>
-</table>
-</div>
-<br />
-<%= link_to 'New Employee', new_book_path %>
+
 

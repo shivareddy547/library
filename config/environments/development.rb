@@ -23,5 +23,17 @@ Library::Application.configure do
   # Only use best-standards-support built into browsers
   config.action_dispatch.best_standards_support = :builtin
 config.action_mailer.default_url_options = { :host => 'localhost:3000' }
+config.action_mailer.delivery_method = :smtp
+
+  config.action_mailer.smtp_settings = {
+  :enable_starttls_auto  => true,  
+  :address                      => 'smtp.gmail.com',
+  :port                             => 587,
+  :tls                                => true,
+  :domain                        => 'gowdanar.com', #you can also use google.com
+  :authentication             => :plain,
+  :user_name                  => 'shiva.r547@gmail.com',
+  :password                     => '9652363670'
+}
 end
 
